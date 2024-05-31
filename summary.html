@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Page</title>
+</head>
+<body>
+    <h1>Summary of Answers</h1>
+    <div id="summary-container">
+        <!-- Summary will be populated here -->
+    </div>
+    <button id="submit-summary">Submit Summary</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const summaryContainer = document.getElementById('summary-container');
+            const questionsAndAnswers = [];
+            
+            for (let i = 1; i <= 19; i++) { // Adjust according to the number of images
+                const answer = sessionStorage.getItem('answer' + i);
+                if (answer) {
+                    const answerElement = document.createElement('div');
+                    answerElement.innerHTML = `<p>Question for Image ${i}: What is shown in the image?</p><p>Answer: ${answer}</p>`;
+                    summaryContainer.appendChild(answerElement);
+                    questionsAndAnswers.push({ question: `Question for Image ${i}`, answer: answer });
+                }
+            }
+
+            document.getElementById('submit-summary').addEventListener('click', function() {
+                submitToGoogleForm(questionsAndAnswers);
+            });
+        });
+
+        function submitToGoogleForm(questionsAndAnswers) {
+            const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSc_KNEdOEHBK_BFXW49Rzo88-gwUjfaTPSOPlWEsn1OBPPqUQ/formResponse'; // Form Response URL
+            const formData = new FormData();
+            
+            // Entry IDs for the Google Form fields
+            const entryIds = {
+                question1: 'entry.862337564', 
+                question2: 'entry.873351581',
+                // Add more entries as needed
+            };
+
+            questionsAndAnswers.forEach((qa, index) => {
+                const entryId = entryIds[`question${index + 1}`];
+                if (entryId) {
+                    formData.append(entryId, qa.answer);
+                }
+            });
+
+            fetch(formUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData,
+            })
+            .then(() => {
+                alert('Summary submitted successfully!');
+            })
+            .catch(error => {
+                console.error('Error submitting summary:', error);
+                alert('There was an error submitting the summary.');
+            });
+        }
+    </script>
+</body>
+</html>

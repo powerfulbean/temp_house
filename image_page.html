@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Page</title>
+    <style>
+        #answer-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        #answer {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        #submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #submitted-answer {
+            margin-top: 20px;
+        }
+        #selected-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image and Question</h1>
+    <div id="image-container">
+        <img id="selected-image" src="" alt="Selected Image">
+    </div>
+    <form id="answer-form">
+        <label for="answer" id="assigned-question"></label>
+        <textarea id="answer" name="answer" required></textarea>
+        <button id="submit-button" type="submit">Submit</button>
+    </form>
+    <div id="submitted-answer"></div>
+
+    <script type = "module">
+        import {quetions} from './utils.js';
+        document.addEventListener("DOMContentLoaded", async function() {
+            let lines = await quetions();
+            const urlParams = new URLSearchParams(window.location.search);
+            const imageName = urlParams.get('image');
+            const imageIdx = imageName.split(' ')[0];
+            console.log(lines[imageIdx-1]);
+            document.getElementById('selected-image').src = imageName;
+            document.getElementById('assigned-question').innerHTML = `Answer the question: ${lines[imageIdx-1]}`
+
+            // Display submitted answer if it exists
+            const submittedAnswer = sessionStorage.getItem('answer' + imageIdx);
+            if (submittedAnswer) {
+                document.getElementById('submitted-answer').innerHTML = `<p>Previously submitted answer: ${submittedAnswer}</p>`;
+                document.getElementById('answer').value = submittedAnswer;
+            }
+
+            document.getElementById('answer-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const answer = document.getElementById('answer').value;
+                sessionStorage.setItem('answer' + imageIdx, answer);
+                alert('Answer submitted!');
+                // Update the displayed submitted answer
+                document.getElementById('submitted-answer').innerHTML = `<p>Previously submitted answer: ${answer}</p>`;
+                document.getElementById('selected-image').style.filter = 'none'; // Remove grayscale from the image
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
