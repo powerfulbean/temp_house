@@ -3,126 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>Supervision House for Supervisors</title>
     <style>
-        .main-container {
-            position: relative;
-            width: 600px; /*Adjust width to match Full.png's width*/
-            height: 600px; /*Adjust height to match Full.png's height*/
-            margin: auto;
-            background: url('frame.png') no-repeat center center;
-            background-size: contain;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
         }
-        .image-container {
-            position: absolute;
+        .container {
+            display: flex;
+            gap: 20px;
         }
-        .image-container img {
-            filter: grayscale(100%);
-            cursor: pointer;
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-
-        }
-
-        #img14{
-            filter: grayscale(100%);
-            cursor: pointer;
-            width: 100px;
-            height:100px;
-            object-fit: contain;
-        }
-
-        #img16{
-            filter: grayscale(100%);
-            cursor: pointer;
-            width: 100px;
-            height:200px;
-            object-fit: contain;
-            z-index: -1;
-        }
-
-        #img19{
-            filter: grayscale(100%);
-            cursor: pointer;
+        .block {
             width: 150px;
-            height:150px;
-            object-fit: contain;
+            height: 150px;
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+            text-align: center;
         }
-
-        .img1 { top: 280px; left: 480px; width: 60px; height: 60px; }
-        .img2 { top: 180px; left: 175px; width: 100px; height: 50px; }
-        .img3 { top: 180px; left: 350px; width: 80px; height: 50px; }
-        .img4 { top: 280px; left: 170px; width: 100px; height: 50px; }
-        .img5 { top: 283px; left: 232px; width: 50px; height: 100px; }
-        .img6 { top: 280px; left: 107px; width: 50px; height: 100px; }
-        .img7 { top: 280px; left: 310px; width: 100px; height: 50px; }
-        .img8 { top: 280px; left: 390px; width: 50px; height: 50px; }
-        .img9 { top: 390px; left: 170px; width: 50px; height: 50px; }
-        .img10 { top: 390px; left: 310px; width: 50px; height: 50px; }
-        .img11 { top: 390px; left: 390px; width: 50px; height: 50px; }
-        .img12 { top: 500px; left: 120px; width: 50px; height: 100px; }
-        .img13 { top: 500px; left: 190px; width: 50px; height: 50px; }
-        .img14 { top: 486px; left: 385px; width: 70px; height: 70px; }
-        .img15 { top: 75px; left: 260px; width: 50px; height: 50px; }
-        .img16 { top: 390px; left: 20px; width: 100px; height: 40px; }
-        .img17 { top: -26px; left: 260px; width: 100px; height: 50px; }
-        .img18 { top: 0px; left: 190px; width: 50px; height: 50px; }
-        .img19 { top: 450px; left: 485px; width: 50px; height: 50px; }
     </style>
 </head>
 <body>
-    <h1>Please click images to answer questions </h1>
-    <div class="main-container">
-        <div class="image-container img1"><a href="image_page.html?image=1 Goal.png"><img id="img1" src="1 Goal.png" alt="Image 1"></a></div>
-        <div class="image-container img2"><a href="image_page.html?image=2 Family Room.png"><img id="img2" src="2 Family Room.png" alt="Image 2"></a></div>
-        <div class="image-container img3"><a href="image_page.html?image=3 Exercise Room.png"><img id="img3" src="3 Exercise Room.png" alt="Image 3"></a></div>
-        <div class="image-container img4"><a href="image_page.html?image=4 Bedroom.png"><img id="img4" src="4 Bedroom.png" alt="Image 4"></a></div>
-        <div class="image-container img5"><a href="image_page.html?image=5 Closet.png"><img id="img5" src="5 Closet.png" alt="Image 5"></a></div>
-        <div class="image-container img6"><a href="image_page.html?image=6 Mirror.png"><img id="img6" src="6 Mirror.png" alt="Image 6"></a></div>
-        <div class="image-container img7"><a href="image_page.html?image=7 Home Office.png"><img id="img7" src="7 Home Office.png" alt="Image 7"></a></div>
-        <div class="image-container img8"><a href="image_page.html?image=8 Clock.png"><img id="img8" src="8 Clock.png" alt="Image 8"></a></div>
-        <div class="image-container img9"><a href="image_page.html?image=9 First Aid Kit.png"><img id="img9" src="9 First Aid Kit.png" alt="Image 9"></a></div>
-        <div class="image-container img10"><a href="image_page.html?image=10 Game.png"><img id="img10" src="10 Game.png" alt="Image 10"></a></div>
-        <div class="image-container img11"><a href="image_page.html?image=11 Playroom.png"><img id="img11" src="11 Playroom.png" alt="Image 11"></a></div>
-        <div class="image-container img12"><a href="image_page.html?image=12 Door.png"><img id="img12" src="12 Door.png" alt="Image 12"></a></div>
-        <div class="image-container img13"><a href="image_page.html?image=13 Foundation.png"><img id="img13" src="13 Foundation.png" alt="Image 13"></a></div>
-        <div class="image-container img14"><a href="image_page.html?image=14 Basement.png"><img id="img14" src="14 Basement.png" alt="Image 14"></a></div>
-        <div class="image-container img15"><a href="image_page.html?image=15 Window.png"><img id="img15" src="15 Window.png" alt="Image 15"></a></div>
-        <div class="image-container img16"><a href="image_page.html?image=16 Tree.png"><img id="img16" src="16 Tree.png" alt="Image 16"></a></div>
-        <div class="image-container img17"><a href="image_page.html?image=17 Roof.png"><img id="img17" src="17 Roof.png" alt="Image 17"></a></div>
-        <div class="image-container img18"><a href="image_page.html?image=18 Chimney.png"><img id="img18" src="18 Chimney.png" alt="Image 18"></a></div>
-        <div class="image-container img19"><a href="image_page.html?image=19 Car.png"><img id="img19" src="19 Car.png" alt="Image 19"></a></div>
+    <div class="container">
+        <a href="#" class="block" id="block1" target="_blank">Screening Form</a>
+        <a href="#" class="block" id="block2" target="_blank">Supervision House</a>
+        <a href="#" class="block" id="block3" target="_blank">Qualitative Feedback Survey</a>
+        <a href="#" class="block" id="block4" target="_blank">Demographic Survey</a>
     </div>
-    <button onclick="complete()">Complete</button>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            for (let i = 1; i <= 19; i++) {
-                if (sessionStorage.getItem('answer' + i)) {
-                    document.getElementById('img' + i).style.filter = 'none';
-                }
-                else{
-                    document.getElementById('img' + i).style.filter = 'grayscale(100%)';
-                }
-            }
-        });
-
-        function complete() {
-            let answeredCount = 0;
-            for (let i = 1; i <= 19; i++) {
-                if (sessionStorage.getItem('answer' + i)) {
-                    answeredCount++;
-                }
-            }
-            console.log(answeredCount);
-            if (answeredCount < 19) {
-                alert('Please answer all 19 questions before completing.');
-            } else {
-                window.location.href = 'summary.html';
-            }
-        }
+        document.getElementById('block1').href = "https://universityrochester.co1.qualtrics.com/jfe/form/SV_cGgwRa5X7D00bfU";
+        document.getElementById('block2').href = "house.html";
+        document.getElementById('block3').href = "https://universityrochester.co1.qualtrics.com/jfe/form/SV_brQjkISllqMs5b8";
+        document.getElementById('block4').href = "https://universityrochester.co1.qualtrics.com/jfe/form/SV_8Ah9p8OtiDf30Pk";
     </script>
 </body>
 </html>
-
