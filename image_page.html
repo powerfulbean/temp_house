@@ -55,7 +55,7 @@
             const imageIdx = imageName.split(' ')[0];
             console.log(lines[imageIdx-1]);
             document.getElementById('selected-image').src = imageName;
-            document.getElementById('assigned-question').innerHTML = `Answer the question: ${lines[imageIdx-1]}`
+            document.getElementById('assigned-question').innerHTML = `${lines[imageIdx-1]}`
 
             // Display submitted answer if it exists
             const submittedAnswer = sessionStorage.getItem('answer' + imageIdx);
