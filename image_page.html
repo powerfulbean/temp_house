@@ -42,7 +42,7 @@
     <form id="answer-form">
         <label for="answer" id="assigned-question"></label>
         <textarea id="answer" name="answer" required></textarea>
-        <button id="submit-button" type="submit">Submit</button>
+        <button id="submit-button" type="submit">Save (please click "complete" at the homepage to submit all your answers)</button>
     </form>
     <div id="submitted-answer"></div>
 
@@ -60,7 +60,7 @@
             // Display submitted answer if it exists
             const submittedAnswer = sessionStorage.getItem('answer' + imageIdx);
             if (submittedAnswer) {
-                document.getElementById('submitted-answer').innerHTML = `<p>Previously submitted answer: ${submittedAnswer}</p>`;
+                document.getElementById('submitted-answer').innerHTML = `<p>Previously saved answer: ${submittedAnswer}</p>`;
                 document.getElementById('answer').value = submittedAnswer;
             }
 
@@ -68,11 +68,11 @@
                 e.preventDefault();
                 const answer = document.getElementById('answer').value;
                 sessionStorage.setItem('answer' + imageIdx, answer);
-                alert('Answer submitted!');
+                //alert('Answer saved!');
                 // Update the displayed submitted answer
-                document.getElementById('submitted-answer').innerHTML = `<p>Previously submitted answer: ${answer}</p>`;
+                document.getElementById('submitted-answer').innerHTML = `<p>Previously saved answer: ${answer}</p>`;
                 document.getElementById('selected-image').style.filter = 'none'; // Remove grayscale from the image
-                window.location.href = 'house.html';
+                window.location.href = 'index.html';
             });
         });
     </script>
