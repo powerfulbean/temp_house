@@ -3,213 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <style>
-        .main-container {
-            position: relative;
-            width: 600px; /*Adjust width to match Full.png's width*/
-            height: 600px; /*Adjust height to match Full.png's height*/
-            margin: auto;
-            background: url('frame.png') no-repeat center center;
-            background-size: contain;
-        }
-
-        .button-container{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, sans-serif;
-        }
-
-        .image-container {
-            position: absolute;
-        }
-        .image-container img {
-            filter: grayscale(100%);
-            cursor: pointer;
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-
-        }
-
-        #img14{
-            filter: grayscale(100%);
-            cursor: pointer;
-            width: 100px;
-            height:100px;
-            object-fit: contain;
-        }
-
-        #img16{
-            filter: grayscale(100%);
-            cursor: pointer;
-            width: 100px;
-            height:200px;
-            object-fit: contain;
-            z-index: -1;
-        }
-
-        #img19{
-            filter: grayscale(100%);
-            cursor: pointer;
-            width: 150px;
-            height:150px;
-            object-fit: contain;
-        }
-
-        #complete-button{
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #ffffff;
-            background-color: #1768fe;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        #complete-button:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-        }
-
-        /* Button active effect */
-        #complete-button:active {
-        background-color: #003d80;
-        transform: scale(0.95);
-        }
-
-        .img1 { top: 280px; left: 480px; width: 60px; height: 60px; }
-        .img2 { top: 180px; left: 175px; width: 100px; height: 50px; }
-        .img3 { top: 180px; left: 350px; width: 80px; height: 50px; }
-        .img4 { top: 280px; left: 170px; width: 100px; height: 50px; }
-        .img5 { top: 283px; left: 232px; width: 50px; height: 100px; }
-        .img6 { top: 280px; left: 107px; width: 50px; height: 100px; }
-        .img7 { top: 280px; left: 350px; width: 100px; height: 50px; }
-        .img8 { top: 280px; left: 390px; width: 50px; height: 50px; }
-        .img9 { top: 390px; left: 170px; width: 50px; height: 50px; }
-        .img10 { top: 390px; left: 310px; width: 50px; height: 50px; }
-        .img11 { top: 390px; left: 350px; width: 50px; height: 50px; }
-        .img12 { top: 500px; left: 120px; width: 50px; height: 100px; }
-        .img13 { top: 500px; left: 190px; width: 50px; height: 50px; }
-        .img14 { top: 486px; left: 340px; width: 70px; height: 70px; }
-        .img15 { top: 75px; left: 260px; width: 50px; height: 50px; }
-        .img16 { top: 390px; left: 20px; width: 100px; height: 40px; }
-        .img17 { top: -26px; left: 260px; width: 100px; height: 50px; }
-        .img18 { top: 30px; left: 150px; width: 50px; height: 50px; }
-        .img19 { top: 450px; left: 485px; width: 50px; height: 50px; }
-    </style>
-</head>
-<body>
-    <h3>Please click images to answer questions and choose one supervisee that you are working with to reflect on these questions</h3>
-    <div class="main-container">
-        <div class="image-container img1"><a href="image_page.html?image=1 Goal.png"><img id="img1" src="1 Goal.png" alt="Image 1"></a></div>
-        <div class="image-container img2"><a href="image_page.html?image=2 Family Room.png"><img id="img2" src="2 Family Room.png" alt="Image 2"></a></div>
-        <div class="image-container img3"><a href="image_page.html?image=3 Exercise Room.png"><img id="img3" src="3 Exercise Room.png" alt="Image 3"></a></div>
-        <div class="image-container img4"><a href="image_page.html?image=4 Bedroom.png"><img id="img4" src="4 Bedroom.png" alt="Image 4"></a></div>
-        <div class="image-container img5"><a href="image_page.html?image=5 Closet.png"><img id="img5" src="5 Closet.png" alt="Image 5"></a></div>
-        <div class="image-container img6"><a href="image_page.html?image=6 Mirror.png"><img id="img6" src="6 Mirror.png" alt="Image 6"></a></div>
-        <div class="image-container img7"><a href="image_page.html?image=7 Home Office.png"><img id="img7" src="7 Home Office.png" alt="Image 7"></a></div>
-        <!-- <div class="image-container img8"><a href="image_page.html?image=8 Clock.png"><img id="img8" src="8 Clock.png" alt="Image 8"></a></div> -->
-        <div class="image-container img9"><a href="image_page.html?image=9 First Aid Kit.png"><img id="img9" src="9 First Aid Kit.png" alt="Image 9"></a></div>
-        <!-- <div class="image-container img10"><a href="image_page.html?image=10 Game.png"><img id="img10" src="10 Game.png" alt="Image 10"></a></div> -->
-        <div class="image-container img11"><a href="image_page.html?image=11 Playroom.png"><img id="img11" src="11 Playroom.png" alt="Image 11"></a></div>
-        <div class="image-container img12"><a href="image_page.html?image=12 Door.png"><img id="img12" src="12 Door.png" alt="Image 12"></a></div>
-        <div class="image-container img13"><a href="image_page.html?image=13 Foundation.png"><img id="img13" src="13 Foundation.png" alt="Image 13"></a></div>
-        <div class="image-container img14"><a href="image_page.html?image=14 Basement.png"><img id="img14" src="14 Basement.png" alt="Image 14"></a></div>
-        <div class="image-container img15"><a href="image_page.html?image=15 Window.png"><img id="img15" src="15 Window.png" alt="Image 15"></a></div>
-        <!-- <div class="image-container img16"><a href="image_page.html?image=16 Tree.png"><img id="img16" src="16 Tree.png" alt="Image 16"></a></div> -->
-        <div class="image-container img17"><a href="image_page.html?image=17 Roof.png"><img id="img17" src="17 Roof.png" alt="Image 17"></a></div>
-        <div class="image-container img18"><a href="image_page.html?image=18 Chimney.png"><img id="img18" src="18 Chimney.png" alt="Image 18"></a></div>
-        <!-- <div class="image-container img19"><a href="image_page.html?image=19 Car.png"><img id="img19" src="19 Car.png" alt="Image 19"></a></div> -->
-    </div>
-    <div class="button-container">
-        <button id="complete-button" onclick="complete()">Complete</button>
-    </div>
+    <title>Participant Entry</title>
     <script>
-        const imageNeedAnswer = [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15, 17, 18];
-        document.addEventListener("DOMContentLoaded", function() {
-            for (let ii = 0; ii < imageNeedAnswer.length; ii++) {
-                const i = imageNeedAnswer[ii];
-                if (sessionStorage.getItem('answer' + i)) {
-                    document.getElementById('img' + i).style.filter = 'none';
-                }
-                else{
-                    document.getElementById('img' + i).style.filter = 'grayscale(100%)';
-                }
+        function saveAndRedirect() {
+            const participantNumber = document.getElementById('participantNumber').value.trim();
+
+            if (participantNumber === '') {
+                alert('Please enter your participant number.');
+                return;
             }
-        });
-
-        function complete() {
-            const questionsAndAnswers = [];
-            let answeredCount = 0;
-            for (let ii = 0; ii < imageNeedAnswer.length; ii++) { // Adjust according to the number of images
-                const i = imageNeedAnswer[ii];
-                const answer = sessionStorage.getItem('answer' + i);
-                if (answer) {
-                    questionsAndAnswers.push({ question: `Question for Image ${i}`, answer: answer });
-                    answeredCount++;
-                }
-            }
-            console.log(answeredCount);
-            if (answeredCount < imageNeedAnswer.length) {
-                alert(`Please answer all ${imageNeedAnswer.length} questions before completing.`);
-            } else {
-                submitToGoogleForm(questionsAndAnswers);
-            }
-        }
-
-        function submitToGoogleForm(questionsAndAnswers) {
-            const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSc_KNEdOEHBK_BFXW49Rzo88-gwUjfaTPSOPlWEsn1OBPPqUQ/formResponse'; // Form Response URL
-            const formData = new FormData();
-            
-            // Entry IDs for the Google Form fields
-            const entryIds = {
-                "question1": "entry.862337564",
-                "question2": "entry.873351581",
-                "question3": "entry.537162438",
-                "question4": "entry.1480522754",
-                "question5": "entry.1788578773",
-                "question6": "entry.474122145",
-                "question7": "entry.176072739",
-                "question8": "entry.495675157",
-                "question9": "entry.619867162",
-                "question10": "entry.1508231007",
-                "question11": "entry.1280629411",
-                "question12": "entry.704906170",
-                "question13": "entry.1039721481",
-                "question14": "entry.1464520291",
-                "question15": "entry.1528294105",
-                "question16": "entry.1337938119",
-                "question17": "entry.2113681993",
-                "question18": "entry.1218820344",
-                "question19": "entry.75729974"
-            };
-
-            questionsAndAnswers.forEach((qa, index) => {
-                const entryId = entryIds[`question${index + 1}`];
-                if (entryId) {
-                    formData.append(entryId, qa.answer);
-                }
-            });
-
-            fetch(formUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData,
-            })
-            .then(() => {
-                alert('Summary submitted successfully!');
-                window.location.href = 'summary.html';
-            })
-            .catch(error => {
-                console.error('Error submitting summary:', error);
-                alert('There was an error submitting the summary.');
-            });
+            sessionStorage.setItem('userid', participantNumber);
+            // Redirect to index_temp.html with the participant number as a query parameter
+            const url = `index_house.html`;
+            window.location.href = url;
         }
     </script>
+</head>
+<body>
+    <h1>Enter Your Participant Number</h1>
+    <form onsubmit="event.preventDefault(); saveAndRedirect();">
+        <label for="participantNumber">Participant Number:</label>
+        <input type="text" id="participantNumber" name="participantNumber" required>
+        <button type="submit">Save</button>
+    </form>
 </body>
 </html>
-
