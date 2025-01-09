@@ -149,7 +149,7 @@
                 const i = imageNeedAnswer[ii];
                 const answer = sessionStorage.getItem('answer' + i);
                 if (answer) {
-                    questionsAndAnswers.push({ question: `Question for Image ${i}`, answer: answer });
+                    questionsAndAnswers.push({ question:i, answer: answer });
                     answeredCount++;
                 }
             }
@@ -195,8 +195,10 @@
 
             const userid = sessionStorage.getItem("userid");
             formData.append(entryIds["userid"], userid)
+            console.log('read_to_submit')
             questionsAndAnswers.forEach((qa, index) => {
-                const entryId = entryIds[`question${index + 1}`];
+                const entryId = entryIds[`question${qa.question}`];
+                console.log(qa.question)
                 if (entryId) {
                     formData.append(entryId, qa.answer);
                 }
