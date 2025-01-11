@@ -39,19 +39,21 @@
           // Generate and save the PDF
           html2pdf().set(options).from(content).save();
         });
-      </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
+    </script>
+    <script type = "module">
+        import {quetions} from './utils.js';
+        const imageNeedAnswer = [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15, 17, 18];
+        document.addEventListener("DOMContentLoaded", async function() {
+            let lines = await quetions();
             const summaryContainer = document.getElementById('summary-container');
-            const questionsAndAnswers = [];
             
-            for (let i = 1; i <= 19; i++) { // Adjust according to the number of images
+            for (let ii = 0; ii <= imageNeedAnswer.length; ii++) { // Adjust according to the number of images
+                const i = imageNeedAnswer[ii];
                 const answer = sessionStorage.getItem('answer' + i);
                 if (answer) {
                     const answerElement = document.createElement('div');
-                    answerElement.innerHTML = `<p>Question for Image ${i}: What is shown in the image?</p><p>Answer: ${answer}</p>`;
+                    answerElement.innerHTML = `<p>Question: ${lines[i-1]}</p><p>Answer: ${answer}</p>`;
                     summaryContainer.appendChild(answerElement);
-                    questionsAndAnswers.push({ question: `Question for Image ${i}`, answer: answer });
                 }
             }
         });
