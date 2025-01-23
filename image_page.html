@@ -68,8 +68,8 @@
                 e.preventDefault();
                 const answer = document.getElementById('answer').value;
                 const words = answer.split(/\s+/).filter(word => word.length > 0);
-                if (words.length < 30) {
-                    alert(`Your input is too short! It contains ${words.length} word(s). Please enter at least 30 words or more.`);
+                if (words.length < 40) {
+                    alert(`Your input is too short! It contains ${words.length} word(s). Please enter at least 40 words or more.`);
                 }
                 else{
                     sessionStorage.setItem('answer' + imageIdx, answer);
