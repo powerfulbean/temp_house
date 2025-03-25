@@ -157,66 +157,13 @@
             if (answeredCount < imageNeedAnswer.length) {
                 alert(`Please answer all ${imageNeedAnswer.length} questions before completing.`);
             } else {
-                submitToGoogleForm(questionsAndAnswers);
+                // submitToGoogleForm(questionsAndAnswers);
+                window.location.href = 'summary.html';
                 const url = "https://universityrochester.co1.qualtrics.com/jfe/form/SV_0wyTuJJzd53GsoS";
                 window.open(url, '_blank');
             }
             // const url = "https://universityrochester.co1.qualtrics.com/jfe/form/SV_0wyTuJJzd53GsoS";
             // window.open(url, '_blank');
-        }
-
-        function submitToGoogleForm(questionsAndAnswers) {
-            const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSc_KNEdOEHBK_BFXW49Rzo88-gwUjfaTPSOPlWEsn1OBPPqUQ/formResponse'; // Form Response URL
-            const formData = new FormData();
-            
-            // Entry IDs for the Google Form fields
-            const entryIds = {
-                "userid": "entry.1195469279",
-                "question1": "entry.862337564",
-                "question2": "entry.873351581",
-                "question3": "entry.537162438",
-                "question4": "entry.1480522754",
-                "question5": "entry.1788578773",
-                "question6": "entry.474122145",
-                "question7": "entry.176072739",
-                "question8": "entry.495675157",
-                "question9": "entry.619867162",
-                "question10": "entry.1508231007",
-                "question11": "entry.1280629411",
-                "question12": "entry.704906170",
-                "question13": "entry.1039721481",
-                "question14": "entry.1464520291",
-                "question15": "entry.1528294105",
-                "question16": "entry.1337938119",
-                "question17": "entry.2113681993",
-                "question18": "entry.1218820344",
-                "question19": "entry.75729974"
-            };
-
-            const userid = sessionStorage.getItem("userid");
-            formData.append(entryIds["userid"], userid)
-            console.log('read_to_submit')
-            questionsAndAnswers.forEach((qa, index) => {
-                const entryId = entryIds[`question${qa.question}`];
-                console.log(qa.question)
-                if (entryId) {
-                    formData.append(entryId, qa.answer);
-                }
-            });
-
-            fetch(formUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData,
-            })
-            .then(() => {
-                alert('Summary submitted successfully!');
-                window.location.href = 'summary.html';
-            })
-            .catch(error => {
-                console.error('Error submitting summary:', error);
-                alert('There was an error submitting the summary.');
-            });
         }
     </script>
 </body>
