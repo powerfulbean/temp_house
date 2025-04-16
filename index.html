@@ -4,26 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Participant Entry</title>
+    <style>
+        #consentModal {
+            display: block;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        #consentBox {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid #888;
+            width: 90%;
+            max-width: 70%;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            border-radius: 10px;
+            text-align: left;
+        }
+    </style>    
     <script>
         function saveAndRedirect() {
             const participantNumber = document.getElementById('participantNumber').value.trim();
-
             if (participantNumber === '') {
                 alert('Please enter your participant number.');
                 return;
             }
             sessionStorage.setItem('userid', participantNumber);
-            // Redirect to index_temp.html with the participant number as a query parameter
-            const url = `index_house.html`;
-            window.location.href = url;
+            window.location.href = 'index_house.html';
+        }
+
+        function handleConsent(consented) {
+            const modal = document.getElementById('consentModal');
+            if (consented) {
+                modal.style.display = 'none';
+                document.getElementById('participantNumber').disabled = false;
+            } else {
+                alert('We thank you for your time spent learning about the study and answering this question!');
+            }
+        }
+
+        window.onload = function() {
+            document.getElementById('participantNumber').disabled = true;
         }
     </script>
 </head>
 <body>
+    <div id="consentModal">
+        <div id="consentBox">
+            <h1>Exploring Supervisors’ Experiences with the Supervision House Activity: <strong>A Mixed-Methods Study</strong></h1>
+            <p><strong>Principal Investigator (PI): Minyi Li</strong></p>
+            <p><strong>Faculty Advisor (FA): Dr. Douglas Guiffrida</strong></p>
+            <p>This form describes a research study that is being conducted by Minyi Li (PI) and Dr. Douglas Guiffrida (FA) from the University of Rochester’s Margaret Warner School of Education.</p>
+            
+            <h2>Purpose of Study</h2>
+            <p>The purpose of the study is to explore the supervisors-in-training’s experiences in self-reflecting on their developmental needs and tasks using the Supervision House tool, an activity originally used among counselors-in-training (Lupton-Smith et al., 2023).</p>
+            
+            <h2>Description of Study Procedures</h2>
+            <p>If you decide to take part in this study, you will be asked to complete the Supervision House activity and an evaluation questionnaire independently, which will take about 60 minutes. You will be invited to attend an optional post-activity interview with the researcher, which will take about 60 minutes. All activities will take place online.</p>
+            
+            <h2>Number of Subjects</h2>
+            <p>This study will include 30-50 subjects enrolled in a CACREP-accredited doctoral counseling program within the U.S.</p>
+            
+            <h2>Payments</h2>
+            <p>A $10 Amazon gift card will be given to the 30-50 subjects who complete the Supervision House activity and evaluation questionnaire within two weeks of receiving the research invitation email. An additional $30 Amazon gift card will be given to the 10-15 subjects who complete the post-activity interview within two weeks of receiving the interview invitation email.</p>
+            
+            <h2>Benefits of Participation</h2>
+            <p>While you may not receive any direct benefit, your participation will contribute to a better understanding of supervisor development, which could benefit future educational practices and policies.</p>
+            
+            <h2>Costs</h2>
+            <p>There will be no cost to you to participate in this study.</p>
+            
+            <h2>Risks of Subject</h2>
+            <p>The potential risk to subjects is expected to be minimal. However, you might experience emotional discomfort when reflecting on personal experiences or confronting vulnerable questions. In the event that you begin to exhibit any signs of stress, I will stop the activity and encourage you to connect with a counselor and contact 988 and 911 if needed. In addition, despite all measures to maintain confidentiality, personal information could be inadvertently disclosed. The transfer of personal information through the Internet carries inherent risks, and the security of your data transmitted through the Internet is not guaranteed.</p>
+            
+            <h2>Future Use of Information/Samples</h2>
+            <p>Your information may be distributed or used for future research studies without additional informed consent. All identifiers will be removed before your information is used or distributed.</p>
+            
+            <h2>Confidentiality of Records</h2>
+            <p>The University of Rochester makes every effort to keep the information collected from you private. To do so, only IRB-approved software <em>Zoom</em>, <em>Box</em>, <em>NVivo</em>, <em>Qualtrics</em>, <em>SPSS</em>, and <em>Excel</em> will be used. The interviews will be audio recorded only on a HIPAA-compliant software <em>Zoom</em>. All documents will be stored securely until I submit my final dissertation; data will be saved on my passcode-protected personal laptop or <em>Box</em>. Each subject will be assigned a number, and all identifying information will be changed or omitted in the dissertation, as well as in potential publications, such as conference presentations and journal articles. Your name will not be used for any purpose at any time. Instead, you will be identified by a pseudo-name in order to protect your confidentiality. Your name and email address will only be used to provide payment and will not be linked to survey responses.</p>
+            
+            <h2>Commercial Profit</h2>
+            <p>We will use your information for research only. However, the results of this research might someday lead to the development of products that a company could sell. You will not receive money from the sale of any such product.</p>
+            
+            <h2>Circumstances for Dismissal</h2>
+            <p>You may be withdrawn from the study (i.e., your participation may be stopped without your consent) if you cannot complete the Supervision House activity and evaluation questionnaire within one month after you receive the research invitation email.</p>
+            
+            <h2>Use of E-mail in Research</h2>
+            <p>You will receive communications about this study via email. Email may be sent or received in an unencrypted (unprotected) manner. Therefore, there is a risk that the content of the communication, including your personal information, could be shared beyond you and the study team. Your consent below indicates that you understand this risk. The University of Rochester is not responsible for any interception of messages sent through email.</p>
+            
+            <h2>Voluntary Participation</h2>
+            <p>Taking part in this study is voluntary. You are free to decline participation or withdraw at any time for any reason. Regardless of your decision, there will be no penalty. If you feel hesitant, you are encouraged to refrain from participating. If you choose to withdraw from the study, any information you have already provided will be deleted. Subjects may withdraw at any time up to two weeks after completing their final activity in the study. After this period, data analysis may have begun, and your information may be included in the research results. If you wish to withdraw, please contact Minyi Li at <a href="mailto:mli96@u.rochester.edu">mli96@u.rochester.edu</a>.</p>
+            
+            <h2>Contact Persons</h2>
+            <p>For more information or questions about this research, you may email Minyi (PI) at <a href="mailto:mli96@u.rochester.edu">mli96@u.rochester.edu</a>. Please contact the University of Rochester Research Subjects Review Board at 265 Crittenden Blvd., CU 420628, Rochester, NY 14642, Telephone (585) 276-0005 or (877) 449-4441 for the following reasons:</p>
+            <ul>
+                <li>You wish to talk to someone other than the research staff about your rights as a research subject;</li>
+                <li>To voice concerns about the research;</li>
+                <li>To provide input concerning the research process;</li>
+                <li>In the event that the study researchers could not be reached.</li>
+            </ul>
+            <button onclick="handleConsent(true)">I Consent</button>
+            <button onclick="handleConsent(false)">I Do Not Consent</button>
+        </div>
+    </div>
+
     <h1>Enter Your Participant Number</h1>
     <form onsubmit="event.preventDefault(); saveAndRedirect();">
         <label for="participantNumber">Participant Number:</label>
-        <input type="text" id="participantNumber" name="participantNumber" required>
+        <input type="text" id="participantNumber" name="participantNumber">
         <button type="submit">Save</button>
     </form>
 </body>
