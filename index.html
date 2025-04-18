@@ -39,7 +39,7 @@
         function saveAndRedirect() {
             const participantNumber = document.getElementById('participantNumber').value.trim();
             if (participantNumber === '') {
-                alert('Please enter your participant number.');
+                showCustomAlert('Please enter your participant number.');
                 return;
             }
             sessionStorage.setItem('userid', participantNumber);
