@@ -131,6 +131,12 @@
     <div class="button-container">
         <button id="complete-button" onclick="complete()">Complete</button>
     </div>
+    <div id="customAlert" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000;">
+        <div style="background:white; padding:20px; max-width:400px; margin:20% auto; border-radius:10px; text-align:center;">
+            <p id="customAlertMessage"></p>
+            <button onclick="closeCustomAlert()">OK</button>
+        </div>
+    </div>
     <script>
         const imageNeedAnswer = [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15, 17, 18];
         document.addEventListener("DOMContentLoaded", function() {
@@ -145,6 +151,15 @@
             }
         });
 
+        function showCustomAlert(message) {
+            document.getElementById('customAlertMessage').innerText = message;
+            document.getElementById('customAlert').style.display = 'block';
+        }
+
+        function closeCustomAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+        }
+
         function complete() {
             const questionsAndAnswers = [];
             let answeredCount = 0;
@@ -158,7 +173,8 @@
             }
             console.log(answeredCount);
             if (answeredCount < imageNeedAnswer.length) {
-                alert(`Please answer all ${imageNeedAnswer.length} questions before completing.`);
+                // alert(`Please answer all ${imageNeedAnswer.length} questions before completing.`);
+                showCustomAlert(`Please answer all ${imageNeedAnswer.length} questions before completing.`);
             } else {
                 // submitToGoogleForm(questionsAndAnswers);
                 const url = "https://universityrochester.co1.qualtrics.com/jfe/form/SV_0wyTuJJzd53GsoS";
