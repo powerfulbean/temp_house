@@ -142,7 +142,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             for (let ii = 0; ii < imageNeedAnswer.length; ii++) {
                 const i = imageNeedAnswer[ii];
-                if (sessionStorage.getItem('answer' + i)) {
+                if (localStorage.getItem('answer' + i)) {
                     document.getElementById('img' + i).style.filter = 'none';
                 }
                 else{
@@ -165,7 +165,7 @@
             let answeredCount = 0;
             for (let ii = 0; ii < imageNeedAnswer.length; ii++) { // Adjust according to the number of images
                 const i = imageNeedAnswer[ii];
-                const answer = sessionStorage.getItem('answer' + i);
+                const answer = localStorage.getItem('answer' + i);
                 if (answer) {
                     questionsAndAnswers.push({ question:i, answer: answer });
                     answeredCount++;

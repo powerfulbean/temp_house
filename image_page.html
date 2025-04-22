@@ -109,7 +109,7 @@ image_page.html?image=15%20Window.png:76 What culturally relevant strategies do 
             document.getElementById('assigned-question').innerHTML = `${lines[imageIdx-1]}`
 
             // Display submitted answer if it exists
-            const submittedAnswer = sessionStorage.getItem('answer' + imageIdx);
+            const submittedAnswer = localStorage.getItem('answer' + imageIdx);
             if (submittedAnswer) {
                 document.getElementById('submitted-answer').innerHTML = `<p>Previously saved answer: ${submittedAnswer}</p>`;
                 document.getElementById('answer').value = submittedAnswer;
@@ -119,8 +119,8 @@ image_page.html?image=15%20Window.png:76 What culturally relevant strategies do 
                 e.preventDefault();
                 const answer = document.getElementById('answer').value;
                 const words = answer.split(/\s+/).filter(word => word.length > 0);
-                sessionStorage.setItem('answer' + imageIdx, answer);
-                sessionStorage.setItem('question' + imageIdx, `${lines[imageIdx-1]}`);
+                localStorage.setItem('answer' + imageIdx, answer);
+                localStorage.setItem('question' + imageIdx, `${lines[imageIdx-1]}`);
                 //alert('Answer saved!');
                 // Update the displayed submitted answer
                 document.getElementById('submitted-answer').innerHTML = `<p>Previously saved answer: ${answer}</p>`;

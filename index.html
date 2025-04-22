@@ -36,13 +36,23 @@
         }
     </style>    
     <script>
+
+        document.addEventListener("DOMContentLoaded", async function() {
+            // Display submitted answer if it exists
+            const userid = localStorage.getItem('userid');
+            console.log(userid);
+            if (userid) {
+                document.getElementById('participantNumber').value = userid;
+            }
+        })
+
         function saveAndRedirect() {
             const participantNumber = document.getElementById('participantNumber').value.trim();
             if (participantNumber === '') {
                 showCustomAlert('Please enter your participant number.');
                 return;
             }
-            sessionStorage.setItem('userid', participantNumber);
+            localStorage.setItem('userid', participantNumber);
             window.location.href = 'index_house.html';
         }
 

@@ -51,8 +51,8 @@
             
             for (let ii = 0; ii <= imageNeedAnswer.length; ii++) { // Adjust according to the number of images
                 const i = imageNeedAnswer[ii];
-                const answer = sessionStorage.getItem('answer' + i);
-                const question = sessionStorage.getItem('question' + i);
+                const answer = localStorage.getItem('answer' + i);
+                const question = localStorage.getItem('question' + i);
                 if (answer) {
                     const answerElement = document.createElement('div');
                     answerElement.innerHTML = `<p>Question: ${question}</p><p>Answer: ${answer}</p>`;
