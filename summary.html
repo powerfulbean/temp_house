@@ -48,7 +48,10 @@
         const imageNeedAnswer = [1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15, 17, 18];
         document.addEventListener("DOMContentLoaded", async function() {
             const summaryContainer = document.getElementById('summary-container');
-            
+            const userid = localStorage.getItem('userid');
+            const useridElement = document.createElement('div');
+            useridElement.innerHTML =  `<p>userId: ${userid}</p>`;
+            summaryContainer.appendChild(useridElement);
             for (let ii = 0; ii <= imageNeedAnswer.length; ii++) { // Adjust according to the number of images
                 const i = imageNeedAnswer[ii];
                 const answer = localStorage.getItem('answer' + i);
