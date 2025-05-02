@@ -12,9 +12,18 @@
             position: relative;
             width: 600px; /*Adjust width to match Full.png's width*/
             height: 600px; /*Adjust height to match Full.png's height*/
-            margin: auto;
+            margin: 60px auto 0 auto;
             background: url('frame.png') no-repeat center center;
             background-size: contain;
+        }
+        .instructions {
+            position: absolute; 
+            z-index: 1000; 
+            left: -400px; 
+            width: 300px; 
+            text-align: left; 
+            margin-bottom: 40px; 
+            margin-top: 40px;
         }
 
         .button-container{
@@ -106,27 +115,38 @@
     </style>
 </head>
 <body>
-    <h3 style="text-align: center; margin-bottom: 40px; margin-top: 40px;">Please click images to answer questions and choose one same supervisee that you were/are working with to reflect on these questions</h3>
-    <div class="main-container">
-        <div class="image-container img1"><a href="image_page.html?image=1 Goal.png"><img id="img1" src="1 Goal.png" alt="Image 1"></a></div>
-        <div class="image-container img2"><a href="image_page.html?image=2 Family Room.png"><img id="img2" src="2 Family Room.png" alt="Image 2"></a></div>
-        <div class="image-container img3"><a href="image_page.html?image=3 Exercise Room.png"><img id="img3" src="3 Exercise Room.png" alt="Image 3"></a></div>
-        <div class="image-container img4"><a href="image_page.html?image=4 Bedroom.png"><img id="img4" src="4 Bedroom.png" alt="Image 4"></a></div>
-        <div class="image-container img5"><a href="image_page.html?image=5 Closet.png"><img id="img5" src="5 Closet.png" alt="Image 5"></a></div>
-        <div class="image-container img6"><a href="image_page.html?image=6 Mirror.png"><img id="img6" src="6 Mirror.png" alt="Image 6"></a></div>
-        <div class="image-container img7"><a href="image_page.html?image=7 Home Office.png"><img id="img7" src="7 Home Office.png" alt="Image 7"></a></div>
-        <!-- <div class="image-container img8"><a href="image_page.html?image=8 Clock.png"><img id="img8" src="8 Clock.png" alt="Image 8"></a></div> -->
-        <div class="image-container img9"><a href="image_page.html?image=9 First Aid Kit.png"><img id="img9" src="9 First Aid Kit.png" alt="Image 9"></a></div>
-        <!-- <div class="image-container img10"><a href="image_page.html?image=10 Game.png"><img id="img10" src="10 Game.png" alt="Image 10"></a></div> -->
-        <div class="image-container img11"><a href="image_page.html?image=11 Playroom.png"><img id="img11" src="11 Playroom.png" alt="Image 11"></a></div>
-        <div class="image-container img12"><a href="image_page.html?image=12 Door.png"><img id="img12" src="12 Door.png" alt="Image 12"></a></div>
-        <div class="image-container img13"><a href="image_page.html?image=13 Foundation.png"><img id="img13" src="13 Foundation.png" alt="Image 13"></a></div>
-        <div class="image-container img14"><a href="image_page.html?image=14 Basement.png"><img id="img14" src="14 Basement.png" alt="Image 14"></a></div>
-        <div class="image-container img15"><a href="image_page.html?image=15 Window.png"><img id="img15" src="15 Window.png" alt="Image 15"></a></div>
-        <!-- <div class="image-container img16"><a href="image_page.html?image=16 Tree.png"><img id="img16" src="16 Tree.png" alt="Image 16"></a></div> -->
-        <div class="image-container img17"><a href="image_page.html?image=17 Roof.png"><img id="img17" src="17 Roof.png" alt="Image 17"></a></div>
-        <div class="image-container img18"><a href="image_page.html?image=18 Chimney.png"><img id="img18" src="18 Chimney.png" alt="Image 18"></a></div>
-        <!-- <div class="image-container img19"><a href="image_page.html?image=19 Car.png"><img id="img19" src="19 Car.png" alt="Image 19"></a></div> -->
+    <!-- <div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; margin-top: 40px; margin-bottom: 40px;"> -->
+    <div style="position: relative; width: 600px; margin: auto;">
+        <div class="instructions">
+            <p><strong>Instructions:</strong></p>
+            <ol>
+                <li>Please click the images to answer questions. You can start anywhere you want.</li>
+                <li>Choose <strong>one</strong> supervisee you have worked with or are currently working with, and keep this supervisee in mind when reflecting on all the questions.</li>
+                <li>You <strong>do not</strong> need to write in full sentences or complete paragraphs. Feel free to jot down keywords, short phrases, or anything else that feels natural and authentic to you. This is your space for self-reflection, and you don't need to worry about grammar or structure.</li>
+                <li>You <strong>do not</strong> need to answer all the questions at once. Your responses will be automatically saved, so you can pause and return to the activity at any time.</li>
+            </ol>
+        </div>
+        <div class="main-container">
+            <div class="image-container img1"><a href="image_page.html?image=1 Goal.png"><img id="img1" src="1 Goal.png" alt="Image 1"></a></div>
+            <div class="image-container img2"><a href="image_page.html?image=2 Family Room.png"><img id="img2" src="2 Family Room.png" alt="Image 2"></a></div>
+            <div class="image-container img3"><a href="image_page.html?image=3 Exercise Room.png"><img id="img3" src="3 Exercise Room.png" alt="Image 3"></a></div>
+            <div class="image-container img4"><a href="image_page.html?image=4 Bedroom.png"><img id="img4" src="4 Bedroom.png" alt="Image 4"></a></div>
+            <div class="image-container img5"><a href="image_page.html?image=5 Closet.png"><img id="img5" src="5 Closet.png" alt="Image 5"></a></div>
+            <div class="image-container img6"><a href="image_page.html?image=6 Mirror.png"><img id="img6" src="6 Mirror.png" alt="Image 6"></a></div>
+            <div class="image-container img7"><a href="image_page.html?image=7 Home Office.png"><img id="img7" src="7 Home Office.png" alt="Image 7"></a></div>
+            <!-- <div class="image-container img8"><a href="image_page.html?image=8 Clock.png"><img id="img8" src="8 Clock.png" alt="Image 8"></a></div> -->
+            <div class="image-container img9"><a href="image_page.html?image=9 First Aid Kit.png"><img id="img9" src="9 First Aid Kit.png" alt="Image 9"></a></div>
+            <!-- <div class="image-container img10"><a href="image_page.html?image=10 Game.png"><img id="img10" src="10 Game.png" alt="Image 10"></a></div> -->
+            <div class="image-container img11"><a href="image_page.html?image=11 Playroom.png"><img id="img11" src="11 Playroom.png" alt="Image 11"></a></div>
+            <div class="image-container img12"><a href="image_page.html?image=12 Door.png"><img id="img12" src="12 Door.png" alt="Image 12"></a></div>
+            <div class="image-container img13"><a href="image_page.html?image=13 Foundation.png"><img id="img13" src="13 Foundation.png" alt="Image 13"></a></div>
+            <div class="image-container img14"><a href="image_page.html?image=14 Basement.png"><img id="img14" src="14 Basement.png" alt="Image 14"></a></div>
+            <div class="image-container img15"><a href="image_page.html?image=15 Window.png"><img id="img15" src="15 Window.png" alt="Image 15"></a></div>
+            <!-- <div class="image-container img16"><a href="image_page.html?image=16 Tree.png"><img id="img16" src="16 Tree.png" alt="Image 16"></a></div> -->
+            <div class="image-container img17"><a href="image_page.html?image=17 Roof.png"><img id="img17" src="17 Roof.png" alt="Image 17"></a></div>
+            <div class="image-container img18"><a href="image_page.html?image=18 Chimney.png"><img id="img18" src="18 Chimney.png" alt="Image 18"></a></div>
+            <!-- <div class="image-container img19"><a href="image_page.html?image=19 Car.png"><img id="img19" src="19 Car.png" alt="Image 19"></a></div> -->
+        </div>
     </div>
     <div class="button-container">
         <button id="complete-button" onclick="complete()">Complete</button>
