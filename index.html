@@ -56,7 +56,7 @@
         function saveAndRedirect() {
             const participantNumber = document.getElementById('participantNumber').value.trim();
             if (participantNumber === '') {
-                showCustomAlert('Please enter your participant number.');
+                showCustomAlert('Please enter your research subject number.');
                 return;
             }
             localStorage.setItem('userid', participantNumber);
@@ -124,7 +124,7 @@
             <p>The data will be retained for three years. Your information may be distributed or used for future research studies without additional informed consent. Results of the research may be presented at meetings or in publications, but your name will not be used.</p>
             
             <p><strong>Confidentiality of Records</strong></p>
-            <p>The University of Rochester (UR) makes every effort to keep the information collected from you private. To ensure this, only Institutional Review Board (IRB) approved software — UR Box, NVivo, Qualtrics, SPSS, and Excel — will be used for data management and data analysis. All documents will be transferred from the PI’s passcode-protected personal laptop within the same day and securely stored in a restricted folder on UR Box. Only the PI and the FA have access to the folder. Identifying information (i.e., your name, your email address, and the name of your university) will be omitted from the dissertation as well as from potential publications, such as conference presentations and journal articles. You will be assigned a participant number to use during the research, and a pseudonym will be used in publications to protect your confidentiality.</p>
+            <p>The University of Rochester (UR) makes every effort to keep the information collected from you private. To ensure this, only Institutional Review Board (IRB) approved software — UR Box, NVivo, Qualtrics, SPSS, and Excel — will be used for data management and data analysis. All documents will be transferred from the PI’s passcode-protected personal laptop within the same day and securely stored in a restricted folder on UR Box. Only the PI and the FA have access to the folder. Identifying information (i.e., your name, your email address, and the name of your university) will be omitted from the dissertation as well as from potential publications, such as conference presentations and journal articles. You will be assigned a research subject number to use during the research, and a pseudonym will be used in publications to protect your confidentiality.</p>
             
             <p><strong>Commercial Profit</strong></p>
             <p>The study researchers will use your information for research only. However, the results of this research might someday lead to the development of products that a company could sell. You will not receive money from the sale of any such product.</p>
@@ -157,9 +157,9 @@
             <button onclick="closeCustomAlert()">OK</button>
         </div>
     </div>
-    <h1>Enter Your Participant Number</h1>
+    <h1>Enter Your research subject number</h1>
     <form onsubmit="event.preventDefault(); saveAndRedirect();">
-        <label for="participantNumber">Participant Number:</label>
+        <label for="participantNumber">research subject number:</label>
         <input type="text" id="participantNumber" name="participantNumber">
         <button type="submit">Save</button>
     </form>
