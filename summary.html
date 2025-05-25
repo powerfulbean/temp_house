@@ -59,7 +59,7 @@
                 const [analogy, item1, item2] = question.split("+++");
                 if (answer) {
                     const answerElement = document.createElement('div');
-                    answerElement.innerHTML = `<p>Question: <i>${analogy}</i> ${item1} ${item2} </p><p>Answer: ${answer}</p>`;
+                    answerElement.innerHTML = `<p>Question: <i>${analogy}</i> 1)${item1} 2)${item2} </p><p>Answer: ${answer}</p>`;
                     summaryContainer.appendChild(answerElement);
                 }
             }
