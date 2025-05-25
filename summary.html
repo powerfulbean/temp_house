@@ -56,9 +56,10 @@
                 const i = imageNeedAnswer[ii];
                 const answer = localStorage.getItem('answer' + i);
                 const question = localStorage.getItem('question' + i);
+                const [analogy, item1, item2] = question.split("+++");
                 if (answer) {
                     const answerElement = document.createElement('div');
-                    answerElement.innerHTML = `<p>Question: ${question}</p><p>Answer: ${answer}</p>`;
+                    answerElement.innerHTML = `<p>Question: <i>${analogy}</i> ${item1} ${item2} </p><p>Answer: ${answer}</p>`;
                     summaryContainer.appendChild(answerElement);
                 }
             }
