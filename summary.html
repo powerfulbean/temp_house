@@ -47,6 +47,9 @@
 
           // Generate and save the PDF
           html2pdf().set(options).from(content).save();
+
+          const url = "https://universityrochester.co1.qualtrics.com/jfe/form/SV_0wyTuJJzd53GsoS";
+            window.open(url, '_blank');
         });
     </script>
     <script type = "module">
